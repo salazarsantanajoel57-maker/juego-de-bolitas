@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvb3m1n8aeuvb"]
+
+[ext_resource type="PackedScene" uid="uid://nipdtg0bdhch" path="res://parent_brick.tscn" id="1_ot13w"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ot13w"]
+bounce = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ot13w"]
+radius = 22.5
+height = 45.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whlr7"]
+radius = 23.194826
+
+[node name="circle" unique_id=1007757496 instance=ExtResource("1_ot13w")]
+physics_material_override = SubResource("PhysicsMaterial_ot13w")
+
+[node name="MeshInstance2D" parent="." index="0" unique_id=464454035]
+mesh = SubResource("CapsuleMesh_ot13w")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=25979536]
+shape = SubResource("CircleShape2D_whlr7")

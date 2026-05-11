@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://do25e85tt7hmf"]
+
+[ext_resource type="Script" uid="uid://baynko6qv77me" path="res://control.gd" id="1_qtu10"]
+[ext_resource type="PackedScene" uid="uid://dvu0n0yd0l6y" path="res://bottoom.tscn" id="3_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://lqp3s21ekhxu" path="res://izquierda´png.jpeg" id="3_kbped"]
+[ext_resource type="Texture2D" uid="uid://b73diuvyg77c4" path="res://derecha.png.jpeg" id="4_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://dupiqn31k0ffr" path="res://disparo.png" id="5_iy58a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_62e2m"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62e2m"]
+size = Vector2(20, 1024)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qtu10"]
+bounce = 1.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ee4bf"]
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6a6wx"]
+size = Vector2(80, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sky72"]
+size = Vector2(80, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ytqx"]
+size = Vector2(1500, 1500)
+
+[node name="Control" type="Node2D" unique_id=187500325]
+script = ExtResource("1_qtu10")
+
+[node name="bottoom" parent="." unique_id=2133703592 instance=ExtResource("3_ee4bf")]
+position = Vector2(0, 1050)
+
+[node name="shoot_delay" type="Timer" parent="." unique_id=1941294248]
+wait_time = 0.1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=641659937]
+position = Vector2(0, 512)
+physics_material_override = SubResource("PhysicsMaterial_62e2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1214315830]
+shape = SubResource("RectangleShape2D_62e2m")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=229336288]
+position = Vector2(600, 512)
+physics_material_override = SubResource("PhysicsMaterial_qtu10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1672071956]
+position = Vector2(-216.99994, -490.99994)
+rotation = -1.55659
+shape = SubResource("RectangleShape2D_62e2m")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1799964159]
+position = Vector2(0, 512)
+physics_material_override = SubResource("PhysicsMaterial_ee4bf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=201584975]
+position = Vector2(300, 0)
+shape = SubResource("RectangleShape2D_62e2m")
+
+[node name="btn_izquierda" type="TouchScreenButton" parent="." unique_id=1186207894]
+position = Vector2(42, 923)
+texture_normal = ExtResource("3_kbped")
+shape = SubResource("RectangleShape2D_6a6wx")
+action = "aim_left"
+
+[node name="btn_derecha" type="TouchScreenButton" parent="." unique_id=1511291677]
+position = Vector2(393, 915)
+texture_normal = ExtResource("4_fj5cn")
+shape = SubResource("RectangleShape2D_sky72")
+action = "aim_right"
+
+[node name="btn_disparar" type="TouchScreenButton" parent="." unique_id=248953294]
+position = Vector2(203, 893)
+scale = Vector2(0.08312022, 0.0665387)
+texture_normal = ExtResource("5_iy58a")
+shape = SubResource("RectangleShape2D_0ytqx")
+action = "shoot"

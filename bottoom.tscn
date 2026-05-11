@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dvu0n0yd0l6y"]
+
+[ext_resource type="Script" uid="uid://8otjggb43lsq" path="res://bottoom.gd" id="1_0r30e"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bmtkr"]
+size = Vector2(600, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0r30e"]
+size = Vector2(602.5, 50)
+
+[node name="bottoom" type="Area2D" unique_id=1809213081 groups=["bottom"]]
+position = Vector2(0, 1000)
+script = ExtResource("1_0r30e")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=2142157462]
+mesh = SubResource("QuadMesh_bmtkr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=184162183]
+position = Vector2(-4.25, 0)
+shape = SubResource("RectangleShape2D_0r30e")
+
+[connection signal="body_entered" from="." to="." method="_on_bottoom_body_entered"]

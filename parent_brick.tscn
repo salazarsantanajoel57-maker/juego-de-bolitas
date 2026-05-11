@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://nipdtg0bdhch"]
+
+[ext_resource type="Script" uid="uid://oc0sc1nd4mj5" path="res://parent_brick.gd" id="1_7rnas"]
+
+[node name="parent_brick" type="StaticBody2D" unique_id=1007757496 groups=["brick"]]
+script = ExtResource("1_7rnas")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=464454035]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=25979536]
+
+[node name="brick_life" type="Label" parent="." unique_id=1949328660]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)

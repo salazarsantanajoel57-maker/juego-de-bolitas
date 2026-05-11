@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dhmanbcnql7y8"]
+
+[ext_resource type="PackedScene" uid="uid://nipdtg0bdhch" path="res://parent_brick.tscn" id="1_2eeqm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2eeqm"]
+bounce = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_2eeqm"]
+size = Vector2(45, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5epwn"]
+size = Vector2(46, 46)
+
+[node name="square" unique_id=1007757496 instance=ExtResource("1_2eeqm")]
+physics_material_override = SubResource("PhysicsMaterial_2eeqm")
+
+[node name="MeshInstance2D" parent="." index="0" unique_id=464454035 groups=["brick"]]
+mesh = SubResource("QuadMesh_2eeqm")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=25979536]
+shape = SubResource("RectangleShape2D_5epwn")
